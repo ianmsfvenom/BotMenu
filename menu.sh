@@ -10,9 +10,9 @@ RED='\033[1;31m'
 NC='\033[0m'
 clear
 
-figlet -t 'Bot Whatsapp Termux' -f slant -c | lolcat -s
+figlet -c -f slant -t 'Bot Whatsapp Termux' | lolcat 
 
-echo  "Seja bem-vindo ao menu de bots de whatsapp o que deseja? \n\n" | lolcat -a -p -d 50
+echo  "Seja bem-vindo ao menu de bots de whatsapp o que deseja? \n\n" | lolcat -a -d 50 
 
 sleep 0.5
 echo $CYAN"[1] Instalar Brizas-bot Ultimate"
