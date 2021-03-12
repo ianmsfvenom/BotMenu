@@ -20,7 +20,13 @@ else
 	echo $RED "Você não instalou o ruby, instalando..."
 	sleep 1
 	apt install ruby
-	gem install lolcat
+	if [-e "/data/data/com.termux/files/usr/bin/lolcat"]; then
+		echo $GREEN "lolcat detectado prosseguindo..."
+		sleep 1
+	else
+		echo $RED "lolcat não detectado, instalando..."
+		gem install lolcat
+	fi
 fi
 
 clear
