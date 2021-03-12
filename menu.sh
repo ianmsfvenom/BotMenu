@@ -1,8 +1,8 @@
 #!bin/bash
 
-apt install lolcat -y
-apt install figlet -y
-
+apt install ruby -y
+gem install lolcat
+apt install figlet 
 CYAN="\033[1;36m"
 PURPLE="\033[1;35m"
 GREEN="\033[1;32m"
