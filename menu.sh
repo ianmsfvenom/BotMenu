@@ -54,7 +54,9 @@ echo $CYAN"[6] Instalar Arya-bot"
 sleep 0.5
 echo $CYAN"[7] Instalar ferramenta de puxar dados"
 sleep 0.5
-echo $CYAN"[8] Sair"
+echo $CYAN"[8] Instalar o ngrok"
+sleep 0.5
+echo $CYAN"[9] Sair"
 echo $PURPLE
 sleep 0.5
 
@@ -194,6 +196,26 @@ if [ $opts = "7" ]; then
 fi
 
 if [ $opts = "8" ]; then
+	clear
+	echo $GREEN "[!] Estou instalando a ferramenta aguarde..."
+	echo $NC
+	sleep 3
+	apt update && apt upgrade
+	cd
+	git clone https://github.com/PSecurity/ps.ngrok
+	cd ps.ngrok
+	chmod 777 ngrok
+	clear
+	echo $GREEN "[!] FERRAMENTA INSTALADA COM SUCESSO, AGORA E SO IR NA PASTA E USAR SUA KEY DE ATIVAÇÃO"
+	echo $GREEN "[!] SIGA OS COMANDOS ABAIXO:"
+	echo
+	echo $YELLOW "cd && cd ps.ngrok && ./ngrok authtoken (sua key)"
+	echo
+	echo $NC
+
+fi
+
+if [ $opts = "9" ]; then
 	echo $RED "FECHANDO..."
 	sleep 3
 	exit
