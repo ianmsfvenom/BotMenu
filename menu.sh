@@ -1,8 +1,8 @@
 #!bin/bash
-apt install figlet 
-pkg update && pkg upgrade 
-pkg install git 
-pkg install wget 
+apt install figlet > /dev/null 2> /dev/null
+pkg update && pkg upgrade > /dev/null 2> /dev/null
+pkg install git > /dev/null 2> /dev/null
+pkg install wget > /dev/null 2> /dev/null
 CYAN="\033[1;36m"
 YELLOW="\033[1;33m"
 PURPLE="\033[1;35m"
@@ -18,18 +18,18 @@ if [ -e "$HOME/../usr/bin/ruby" ]; then
 		sleep 1
 	else
 		echo $RED"[!] Lolcat não detectado, instalando..."
-		gem install lolcat 
+		gem install lolcat > /dev/null 2> /dev/null
 	fi
 else
 	echo $RED"[!] Ruby não detectado, instalando..."
 	sleep 1
-	apt install ruby 
+	apt install ruby > /dev/null 2> /dev/null
 	if [ -e "/data/data/com.termux/files/usr/bin/lolcat" ]; then
 		echo $GREEN"[!] Lolcat detectado prosseguindo..."
 		sleep 1
 	else
 		echo $RED"[!] Lolcat não detectado, instalando..."
-		gem install lolcat 
+		gem install lolcat > /dev/null 2> /dev/null
 	fi
 fi
 
@@ -65,16 +65,16 @@ read -p "> " opts
 if [ $opts = "1" ]; then
 	clear
 	echo $GREEN
-	echo "[!] Estou instalando o bot aguarde..."
-	echo $NC
+	echo "[!] Baixando o bot aguarde..." $NC
 	sleep 3
 	cd
-	git clone https://github.com/ianmsfvenom/Brizas-bot 
+	git clone https://github.com/ianmsfvenom/Brizas-bot > /dev/null 2> /dev/null
 	clear
+	echo $GREEN"[!] Bot baixado com sucesso! Instalando as dependências..." $NC
 	cd Brizas-bot
-	bash install.sh 
+	bash install.sh /dev/null 2> /dev/null
 	clear
-	echo $GREEN "[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
+	echo $GREEN"[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
 	echo
 	echo $YELLOW "cd .. && cd Brizas-bot && npm start"
 	echo
@@ -83,133 +83,117 @@ fi
 
 if [ $opts = "2" ]; then
 	clear
-	echo $GREEN "[!] Estou instalando o bot aguarde..."
-	echo $NC
-	sleep 3
-	git clone https://github.com/glub1/w 
-	clear
-	cd w
-	pkg install unzip 
-	pkg install nodejs 
-	pkg install ffmpeg 
-	pkg install tesseract 
-	unzip w.zip 
-	clear
-	cd w
-	bash install.sh 
-	clear
-	echo $GREEN "[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
-	echo
-	echo $YELLOW "cd .. && cd w && cd w && npm start"
-	echo
-	echo $NC
-fi
-
-if [ $opts = "3" ]; then
-	clear
-	echo $GREEN "[!] Estou instalando o bot aguarde..."
-	echo $NC
+	echo $GREEN"[!] Baixando o bot aguarde..." $NC
 	sleep 3
 	cd
-	git clone https://github.com/Admcauss-alt/Caussx 
+	git clone https://github.com/glub1/w > /dev/null 2> /dev/null
 	clear
+	echo $GREEN"[!] Bot baixado com sucesso! Instalando as dependências..." $NC
+	cd w
+	pkg install unzip > /dev/null 2> /dev/null
+	pkg install nodejs > /dev/null 2> /dev/null
+	pkg install ffmpeg > /dev/null 2> /dev/null
+	pkg install tesseract > /dev/null 2> /dev/null
+	unzip w.zip > /dev/null 2> /dev/null
+	cd w
+	bash install.sh > /dev/null 2> /dev/null
+	clear
+	echo $GREEN"[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
+	echo
+	echo $YELLOW "cd .. && cd w && cd w && npm start"$NC
+fi
+if [ $opts = "3" ]; then
+	clear
+	echo $GREEN"[!] Baixando o bot aguarde..."$NC
+	sleep 3
+	cd
+	git clone https://github.com/Admcauss-alt/Caussx > /dev/null 2> /dev/null
+	clear
+	echo $GREEN"[!] Bot baixado com sucesso! Instalando as dependências..."$NC
 	cd Caussx
-	bash install.sh 
+	bash install.sh > /dev/null 2> /dev/null
 	clear
-	echo $GREEN "[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
+	echo $GREEN"[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
 	echo
-	echo $YELLOW "cd .. && cd Caussx && npm start"
-	echo
-	echo $NC
+	echo $YELLOW"cd .. && cd Caussx && npm start"$NC
 fi
 
 if [ $opts = "4" ]; then
 	clear
-	echo $GREEN "[!] Estou instalando o bot aguarde..."
-	echo $NC
+	echo $GREEN"[!] Baixando o bot aguarde..." $NC
 	sleep 3
 	cd
-	git clone https://github.com/KRATOSmdzkk23/bot4.0.git 
+	git clone https://github.com/KRATOSmdzkk23/bot4.0.git > /dev/null 2> /dev/null
 	clear
+	echo $GREEN"[!]Bot baixado com sucesso! Instalando as dependências..."$NC
 	cd bot4.0
-	bash install.sh 
+	bash install.sh > /dev/null 2> /dev/null
 	clear
 	echo $GREEN "[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
 	echo
-	echo $YELLOW "cd .. && cd bot4.0 && npm start"
-	echo
-	echo $NC
+	echo $YELLOW "cd .. && cd bot4.0 && npm start"$NC
 fi
 if [ $opts = "5" ]; then
 	clear
-	echo $GREEN "[!] Estou instalando o bot aguarde..."
-	echo $NC
+	echo $GREEN "[!] Baixando o bot aguarde..."$NC
 	sleep 3
 	cd
-	git clone https://github.com/MhankBarBar/termux-wabot 
+	git clone https://github.com/MhankBarBar/termux-wabot > /dev/null 2> /dev/null
 	clear
+	echo $GREEN"[!]Bot baixado com sucesso! Instalando as dependências..."$NC
 	cd termux-wabot
-	bash install.sh 
+	bash install.sh > /dev/null 2> /dev/null
 	clear
 	echo $GREEN "[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
 	echo
-	echo $YELLOW "cd .. && cd termux-wabot && npm start"
-	echo
-	echo $NC
+	echo $YELLOW "cd .. && cd termux-wabot && npm start"$NC
 fi
 if [ $opts = "6" ]; then
 	clear
-	echo $GREEN "[!] Estou instalando o bot aguarde..."
-	echo $NC
+	echo $GREEN "[!] Baixando o bot aguarde..."$NC
 	sleep 3
-	apt update && apt upgrade 
-	apt install nodejs 
-	apt install ffmpeg 
-	apt install imagemagick 
-	git clone https://github.com/Arya274/Arya-Bot 
+	cd
+	apt install nodejs > /dev/null 2> /dev/null
+	apt install ffmpeg > /dev/null 2> /dev/null
+	apt install imagemagick > /dev/null 2> /dev/null
+	git clone https://github.com/Arya274/Arya-Bot > /dev/null 2> /dev/null
 	clear
 	cd Arya-Bot
-	npm install 
+	npm install > /dev/null 2> /dev/null
 	clear
-	echo $GREEN "[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
+	echo $GREEN"[!] BOT INSTALADO COM SUCESSO, COPIE E COLE O COMANDO ABAIXO E DPS ESCANEIE O CÓDIGO :)"
 	echo
-	echo $YELLOW "cd .. && cd Arya-Bot && npm start"
-	echo
-	echo $NC
+	echo $YELLOW "cd .. && cd Arya-Bot && npm start"$NC
 fi
 
 if [ $opts = "7" ]; then
 	clear
-	echo $GREEN "[!] Estou instalando a ferramenta aguarde..."
-	echo $NC
+	echo $GREEN "[!] Instalando a ferramenta aguarde..."$NC
 	sleep 3
-	apt install python && apt install python2 
-	git clone https://github.com/Kiny-Kiny/Kiny-Painel 
+	cd
+	apt install python > /dev/null 2> /dev/null
+	apt install python2 > /dev/null 2> /dev/null
+	git clone https://github.com/Kiny-Kiny/Kiny-Painel > /dev/null 2> /dev/null
 	clear
 	echo $GREEN "[!] FERRAMENTA INSTALADA COM SUCESSO, COPIE E COLE O COMANDO ABAIXO, O USUARIO E QUALQUER UM E A SENHA É: VirtualInsanity"
 	echo
-	echo $YELLOW "cd .. && Kiny-Painel && python3 main.py"
-	echo
-	echo $NC
+	echo $YELLOW "cd .. && Kiny-Painel && python3 main.py"$NC
 
 fi
 
 if [ $opts = "8" ]; then
 	clear
-	echo $GREEN "[!] Estou instalando a ferramenta aguarde..."
-	echo $NC
+	echo $GREEN "[!] Instalando o ngrok aguarde..."$NC
 	sleep 3
 	cd
-	git clone https://github.com/PSecurity/ps.ngrok 
+	git clone https://github.com/PSecurity/ps.ngrok > /dev/null 2> /dev/null
 	cd ps.ngrok
 	chmod 777 ngrok 
 	clear
 	echo $GREEN "[!] FERRAMENTA INSTALADA COM SUCESSO, AGORA E SO IR NA PASTA E USAR SUA KEY DE ATIVAÇÃO"
 	echo $GREEN "[!] SIGA OS COMANDOS ABAIXO:"
 	echo
-	echo $YELLOW "cd && cd ps.ngrok && ./ngrok authtoken (sua key)"
-	echo
-	echo $NC
+	echo $YELLOW "cd && cd ps.ngrok && ./ngrok authtoken (sua key)"$NC
 
 fi
 
