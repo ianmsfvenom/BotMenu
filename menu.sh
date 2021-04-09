@@ -1,6 +1,6 @@
 #!bin/bash
 apt install figlet > /dev/null 2> /dev/null
-pkg update && pkg upgrade > /dev/null 2> /dev/null
+pkg update > /dev/null 2> /dev/null && pkg upgrade > /dev/null 2> /dev/null
 pkg install git > /dev/null 2> /dev/null
 pkg install wget > /dev/null 2> /dev/null
 CYAN="\033[1;36m"
@@ -56,7 +56,9 @@ echo $CYAN"[7] Instalar ferramenta de puxar dados"
 sleep 0.5
 echo $CYAN"[8] Instalar o ngrok"
 sleep 0.5
-echo $CYAN"[9] Sair"
+echo $CYAN"[9] Instalar rastreador de localização"
+sleep 0.5
+echo $CYAN"[10] Sair"
 echo $PURPLE
 sleep 0.5
 
@@ -198,6 +200,22 @@ if [ $opts = "8" ]; then
 fi
 
 if [ $opts = "9" ]; then
+	clear
+	echo $GREEN "[!] Instalando a ferramenta aguarde..."$NC
+	sleep 3
+	cd
+	pkg install python php openssh python2 > /dev/null 2> /dev/null
+	git clone https://github.com/thewhiteh4t/seeker > /dev/null 2> /dev/null
+	cd seeker
+	clear
+	echo $GREEN "[!] FERRAMENTA INSTALADA COM SUCESSO, ABRA OUTRA SESSÃO E INICIE O NGROK"
+	echo $GREEN "[!] SIGA OS COMANDOS ABAIXO:"
+	echo
+	echo $YELLOW "cd && cd ps.ngrok && ./ngrok http 8080"$NC
+
+fi
+
+if [ $opts = "10" ]; then
 	echo $RED "FECHANDO..."
 	sleep 3
 	exit
