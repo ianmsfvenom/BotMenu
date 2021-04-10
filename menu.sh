@@ -1,8 +1,9 @@
 #!bin/bash
+apt update > /dev/null 2> /dev/null
+apt upgrade > /dev/null 2> /dev/null
 apt install figlet > /dev/null 2> /dev/null
-pkg update > /dev/null 2> /dev/null && pkg upgrade > /dev/null 2> /dev/null
-pkg install git > /dev/null 2> /dev/null
-pkg install wget > /dev/null 2> /dev/null
+pacote=$(dpkg --get-selections | grep "ruby" ) 
+
 CYAN="\033[1;36m"
 YELLOW="\033[1;33m"
 PURPLE="\033[1;35m"
@@ -10,10 +11,11 @@ GREEN="\033[1;32m"
 RED='\033[1;31m'
 NC='\033[0m'
 
-if [ -e "$HOME/../usr/bin/ruby" ]; then
+if [ -n "$pacote" ]; then
 	echo $GREEN"[!] Ruby detectado prosseguindo..."
 	sleep 1
-	if [ -e "/data/data/com.termux/files/usr/bin/lolcat" ]; then
+	pacote=$(dpkg --get-selections | grep "lolcat" ) 
+	if [ -n "$pacote" ]; then
 		echo $GREEN"[!] Lolcat detectado prosseguindo..."
 		sleep 1
 	else
@@ -24,18 +26,13 @@ else
 	echo $RED"[!] Ruby não detectado, instalando..."
 	sleep 1
 	apt install ruby > /dev/null 2> /dev/null
-	if [ -e "/data/data/com.termux/files/usr/bin/lolcat" ]; then
-		echo $GREEN"[!] Lolcat detectado prosseguindo..."
-		sleep 1
-	else
-		echo $RED"[!] Lolcat não detectado, instalando..."
-		gem install lolcat > /dev/null 2> /dev/null
-	fi
+	echo $YELLOW"[!] Instalando o lolcat..."
+	gem install lolcat > /dev/null 2> /dev/null
 fi
 
 clear
 
-figlet -c -f slant -t 'Bot Whatsapp Termux' | lolcat 
+figlet -c -f slant -t 'Briz4lok4' | lolcat 
 
 echo  "Seja bem-vindo ao menu de bots de whatsapp o que deseja? \n\n" | lolcat -a -d 50 
 
@@ -69,6 +66,11 @@ if [ $opts = "1" ]; then
 	echo $GREEN
 	echo "[!] Baixando o bot aguarde..." $NC
 	sleep 3
+	if [ -e "$HOME/Brizas-bot" ]; then
+		clear
+		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f Brizas-bot) e tente novamente"
+		exit
+	fi
 	cd
 	git clone https://github.com/ianmsfvenom/Brizas-bot > /dev/null 2> /dev/null
 	clear
@@ -87,6 +89,11 @@ if [ $opts = "2" ]; then
 	clear
 	echo $GREEN"[!] Baixando o bot aguarde..." $NC
 	sleep 3
+	if [ -e "$HOME/w" ]; then
+		clear
+		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f w) e tente novamente"
+		exit
+	fi
 	cd
 	git clone https://github.com/glub1/w > /dev/null 2> /dev/null
 	clear
@@ -108,6 +115,11 @@ if [ $opts = "3" ]; then
 	clear
 	echo $GREEN"[!] Baixando o bot aguarde..."$NC
 	sleep 3
+	if [ -e "$HOME/Caussx" ]; then
+		clear
+		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f Caussx) e tente novamente"
+		exit
+	fi
 	cd
 	git clone https://github.com/Admcauss-alt/Caussx > /dev/null 2> /dev/null
 	clear
@@ -124,6 +136,11 @@ if [ $opts = "4" ]; then
 	clear
 	echo $GREEN"[!] Baixando o bot aguarde..." $NC
 	sleep 3
+	if [ -e "$HOME/bot4.0" ]; then
+		clear
+		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f bot4.0) e tente novamente"
+		exit
+	fi
 	cd
 	git clone https://github.com/KRATOSmdzkk23/bot4.0.git > /dev/null 2> /dev/null
 	clear
@@ -139,6 +156,11 @@ if [ $opts = "5" ]; then
 	clear
 	echo $GREEN "[!] Baixando o bot aguarde..."$NC
 	sleep 3
+	if [ -e "$HOME/termux-wabot" ]; then
+		clear
+		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f termux-wabot) e tente novamente"
+		exit
+	fi
 	cd
 	git clone https://github.com/MhankBarBar/termux-wabot > /dev/null 2> /dev/null
 	clear
@@ -154,6 +176,11 @@ if [ $opts = "6" ]; then
 	clear
 	echo $GREEN "[!] Baixando o bot aguarde..."$NC
 	sleep 3
+	if [ -e "$HOME/Arya-Bot" ]; then
+		clear
+		echo $YELLOW"O bot já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f Arya-Bot) e tente novamente"
+		exit
+	fi
 	cd
 	apt install nodejs > /dev/null 2> /dev/null
 	apt install ffmpeg > /dev/null 2> /dev/null
@@ -172,6 +199,11 @@ if [ $opts = "7" ]; then
 	clear
 	echo $GREEN "[!] Instalando a ferramenta aguarde..."$NC
 	sleep 3
+	if [ -e "$HOME/Kiny-Painel" ]; then
+		clear
+		echo $YELLOW"A ferramenta já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f Kiny-Painel) e tente novamente"
+		exit
+	fi
 	cd
 	apt install python > /dev/null 2> /dev/null
 	apt install python2 > /dev/null 2> /dev/null
@@ -187,6 +219,11 @@ if [ $opts = "8" ]; then
 	clear
 	echo $GREEN "[!] Instalando o ngrok aguarde..."$NC
 	sleep 3
+	if [ -e "$HOME/ps.ngrok" ]; then
+		clear
+		echo $YELLOW"A ferramenta já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f ps.ngrok) e tente novamente"
+		exit
+	fi
 	cd
 	git clone https://github.com/PSecurity/ps.ngrok > /dev/null 2> /dev/null
 	cd ps.ngrok
@@ -203,6 +240,11 @@ if [ $opts = "9" ]; then
 	clear
 	echo $GREEN "[!] Instalando a ferramenta aguarde..."$NC
 	sleep 3
+	if [ -e "$HOME/seeker" ]; then
+		clear
+		echo $YELLOW"A ferramenta já esta instalado no termux, caso queira reinstalar, exclua a pasta do bot com (rm -r -f seeker) e tente novamente"
+		exit
+	fi
 	cd
 	pkg install python php openssh python2 > /dev/null 2> /dev/null
 	git clone https://github.com/thewhiteh4t/seeker > /dev/null 2> /dev/null
