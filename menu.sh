@@ -20,14 +20,14 @@ if [ -n "$pacote" ]; then
 		sleep 1
 	else
 		echo $RED"[!] Lolcat não detectado, instalando..."
-		gem install lolcat > /dev/null 2> /dev/null
+		gem install lolcat 
 	fi
 else
 	echo $RED"[!] Ruby não detectado, instalando..."
 	sleep 1
-	apt install ruby > /dev/null 2> /dev/null
+	apt install ruby 
 	echo $YELLOW"[!] Instalando o lolcat..."
-	gem install lolcat > /dev/null 2> /dev/null
+	gem install lolcat 
 fi
 
 clear
