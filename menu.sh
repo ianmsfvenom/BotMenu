@@ -1,7 +1,7 @@
 #!bin/bash
-apt update > /dev/null 2> /dev/null
-apt upgrade > /dev/null 2> /dev/null
-apt install figlet > /dev/null 2> /dev/null
+apt update
+apt upgrade
+apt install figlet
 pacote=$(dpkg --get-selections | grep "ruby" ) 
 
 CYAN="\033[1;36m"
